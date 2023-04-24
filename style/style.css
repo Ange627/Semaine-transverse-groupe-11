@@ -6,9 +6,51 @@ td {
 thead,
 tfoot {
     background-color: #333;
-    color: #fff;
+    color: #000000;
 }
 
-h1{
-    color: blue;
-}
+
+/* Style pour les balises H1 et H2 */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Style pour les balises TABLE, tbody et tr */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  tbody {
+    font-size: 1.2rem;
+  }
+  
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Style pour la première ligne du tableau (optionnel) */
+  tr:first-child {
+    font-weight: bold;
+    background-color: #f1f1f1;
+  }
+  
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+  }
