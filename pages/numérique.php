@@ -100,6 +100,7 @@
             <tr>
                 <td>Questionnement</td>
                 <td>Score</td>
+                <td>Amélioration</td>
             </tr>
             <tr>
                 <td>Vos collaborateurs sont-ils équipés de nouveaux équipements numériques de travail (PC portable, tablette, smartphone,…) ? </td>
