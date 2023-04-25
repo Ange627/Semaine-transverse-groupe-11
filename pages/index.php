@@ -12,9 +12,9 @@
   <body>
     <h1>Diagnostic entreprise hypromat</h1>
     <p>Liens vers les différents axes d'amélioration</p>
-    <a href="competence.html">compétence</a>
-    <a href="réactivité.html">réactivité</a>
-    <a href="numérique.html">numérique</a>
+    <a href="competence.php">compétence</a>
+    <a href="réactivité.php">réactivité</a>
+    <a href="numérique.php">numérique</a>
 
     <h2>Synthèse</h2>
     <p>Axe Réactivité 3.3/5</p>

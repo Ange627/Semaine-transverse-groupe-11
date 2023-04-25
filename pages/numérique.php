@@ -10,9 +10,9 @@
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
-    <a href="index.html">Home</a>
-    <a href="competence.html">competence</a>
-    <a href="réactivité.html">réactivité</a>
+    <a href="index.php">Home</a>
+    <a href="competence.php">competence</a>
+    <a href="réactivité.php">réactivité</a>
     <br>
     <h1>Axe numérique</h1>
     <table>
