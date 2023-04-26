@@ -1,7 +1,9 @@
 <?php require "header.php";
 
 // Requête SQL pour sélectionner toutes les données de la table
-$sql = "SELECT * FROM competence";
+$sql = "SELECT score,libelle,question FROM competence 
+inner join competence_item on competence.iditem = competence_item.id
+INNER JOIN questionnement_competence on competence.id = questionnement_competence.id;";
 $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées
@@ -9,11 +11,15 @@ if ($result->num_rows > 0) {
 
     // Afficher les données dans un tableau HTML
     echo "<table>";
-    echo "<tr><th>ID</th><th>   </th><th>Email</th></tr>";
+    echo "        <thead>
+    <tr>
+        <th>Excellence technique / communauté pratique</th>
+    </tr>
+</thead>";
 
     // Boucle pour afficher chaque ligne de données
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["id"]."</td><td>".$row["identreprise"]."</td><td>".$row["score"]."</td></tr>";
+        echo "<tr><td>".$row["libelle"]."</td><td>".$row["question"]."</td><td>".$row["libelle"]."</td><td>".$row["score"]."</td></tr>";
     }
 
     echo "</table>";
