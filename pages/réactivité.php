@@ -6,7 +6,7 @@
     <title>Axe compétence</title>
     <link href="../style/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body>  
     <a href="home.php">Home</a>
     <a href="competence.php">competence</a>
     <a href="numérique.php">numérique</a>

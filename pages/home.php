@@ -14,9 +14,11 @@
     <p>Liens vers les différents axes d'amélioration</p>
     <nav>
       <ul>
-        <li><a href="pages/competence.php">Compétence</a></li>
-        <li><a href="pages/numérique.php">Numérique</a></li>
-        <li><a href="pages/réactivité.php">Réactivité</a></li>
+     
+        <li> <a href="../index.php">accueil</a></li>
+        <li><a href="competence.php">Compétence</a></li>
+        <li><a href="numérique.php">Numérique</a></li>
+        <li><a href="réactivité.php">Réactivité</a></li>
       </ul>
     </nav>
 
