@@ -34,7 +34,7 @@ $conn->close();
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
-    <a href="index.php">Home</a>
+    <a href="../index.html">Home</a>
     <a href="numérique.php">numérique</a>
     <a href="réactivité.php">réactivité</a>
     <br>

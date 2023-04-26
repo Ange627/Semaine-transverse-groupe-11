@@ -10,7 +10,7 @@
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
-    <a href="index.php">Home</a>
+    <a href="../index.html">Home</a>
     <a href="competence.php">competence</a>
     <a href="réactivité.php">réactivité</a>
     <br>

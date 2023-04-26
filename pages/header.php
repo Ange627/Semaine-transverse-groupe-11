@@ -12,6 +12,7 @@
     // Vérifier la connexion
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
+        echo "0azdaz résultats";
     }
 
 ?>

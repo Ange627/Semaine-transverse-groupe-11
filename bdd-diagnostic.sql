@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 25 avr. 2023 à 14:51
--- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.2.0
+-- Généré le : mer. 26 avr. 2023 à 10:49
+-- Version du serveur : 10.4.28-MariaDB
+-- Version de PHP : 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,12 +28,31 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `competence` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `identreprise` int(11) DEFAULT NULL,
   `idquestionnement` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   `iditem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `competence`
+--
+
+INSERT INTO `competence` (`id`, `identreprise`, `idquestionnement`, `score`, `iditem`) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 2, 1, 1),
+(3, 1, 3, 1, 1),
+(4, 1, 4, 1, 1),
+(5, 1, 5, 1, 1),
+(6, 1, 6, 1, 1),
+(7, 1, 1, 1, 2),
+(8, 1, 2, 1, 2),
+(9, 1, 1, 1, 3),
+(26, 1, 4, 2, 3),
+(27, 1, 5, 1, 3),
+(28, 1, 6, 1, 3),
+(29, 1, 7, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -87,6 +106,32 @@ CREATE TABLE `numerique` (
   `score` int(11) DEFAULT NULL,
   `iditem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `numerique`
+--
+
+INSERT INTO `numerique` (`id`, `identreprise`, `idquestionnement`, `score`, `iditem`) VALUES
+(NULL, 1, 1, 1, 1),
+(NULL, 1, 2, 1, 1),
+(NULL, 1, 3, 1, 1),
+(NULL, 1, 4, 1, 1),
+(NULL, 1, 5, 1, 1),
+(NULL, 1, 6, 1, 1),
+(NULL, 1, 7, 1, 1),
+(NULL, 1, 1, 1, 2),
+(NULL, 1, 2, 1, 2),
+(NULL, 1, 3, 2, 2),
+(NULL, 1, 4, 2, 2),
+(NULL, 1, 5, 0, 2),
+(NULL, 1, 6, 0, 2),
+(NULL, 1, 1, 0, 3),
+(NULL, 1, 2, 2, 3),
+(NULL, 1, 3, 0, 3),
+(NULL, 1, 4, 2, 3),
+(NULL, 1, 5, 1, 3),
+(NULL, 1, 6, 1, 3),
+(NULL, 1, 7, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -217,6 +262,23 @@ CREATE TABLE `reactivite` (
   `iditem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `reactivite`
+--
+
+INSERT INTO `reactivite` (`id`, `identreprise`, `idquestionnement`, `score`, `iditem`) VALUES
+(NULL, 1, 1, 2, 1),
+(NULL, 1, 2, 0, 1),
+(NULL, 1, 3, 0, 1),
+(NULL, 1, 1, 2, 2),
+(NULL, 1, 2, 1, 2),
+(NULL, 1, 3, 0, 2),
+(NULL, 1, 4, 1, 2),
+(NULL, 1, 1, 0, 3),
+(NULL, 1, 2, 1, 3),
+(NULL, 1, 3, 1, 3),
+(NULL, 1, 1, 0, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -242,6 +304,12 @@ INSERT INTO `reactivite_item` (`id`, `libelle`, `progresser`) VALUES
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `competence`
+--
+ALTER TABLE `competence`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `competence_item`
@@ -288,6 +356,12 @@ ALTER TABLE `reactivite_item`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `competence`
+--
+ALTER TABLE `competence`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT pour la table `competence_item`
