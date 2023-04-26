@@ -7,7 +7,7 @@
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
-    <a href="../index.html">Home</a>
+    <a href="home.php">Home</a>
     <a href="competence.php">competence</a>
     <a href="numérique.php">numérique</a>
     <br>
