@@ -1,17 +1,17 @@
 
 <?php
-    $servername = "localhost"; // le nom du serveur de base de données
-    $username = "root"; // le nom d'utilisateur pour se connecter à la base de données
-    $password = ""; // le mot de passe pour se connecter à la base de données
-    $dbname = "bdd-diagnostic"; // le nom de la base de données à laquelle se connecter
 
-    // création de la connexion
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Connexion à la base de données
+    $host = 'localhost';
+    $username = 'root';
+    $password = '';
+    $dbname = 'bdd-diagnostic';
 
-    // vérification de la connexion
-    if (!$conn) {
-        die("La connexion a échoué : " . mysqli_connect_error());
+    $conn = new mysqli($host, $username, $password, $dbname);
+
+    // Vérifier la connexion
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 
-    echo "Connexion réussie";
 ?>
