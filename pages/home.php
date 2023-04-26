@@ -1,10 +1,13 @@
+<?php require "header.php";
+
+?>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Diagnostic entreprise hypromat</title>
-    <link href="style/style.css" rel="stylesheet">
+    <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
     <h1>Diagnostic entreprise hypromat</h1>
