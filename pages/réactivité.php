@@ -19,9 +19,9 @@
 <?php require "header.php";
 
 // Requête SQL pour sélectionner toutes les données de la table
-$sql = "SELECT score,libelle,question FROM competence 
-inner join competence_item on competence.iditem = competence_item.id
-INNER JOIN questionnement_competence on competence.id = questionnement_competence.id;";
+$sql = "SELECT score,libelle,question FROM reactivite 
+inner join reactivite_item on reactivite.iditem = reactivite_item.id
+INNER JOIN questionnement_reactivite on reactivite.id = questionnement_reactivite.id;";
 $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées

@@ -39,7 +39,7 @@
 
         // Boucle pour afficher chaque ligne de données
         while($row = $result->fetch_assoc()) {
-            echo "<tr><td>".$row["nom"]."</td></tr>";
+            echo "<tr><td>".$row["nom"]."</td><td>liens</td></tr>";
         }
 
         echo "</table>";
