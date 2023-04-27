@@ -1,5 +1,7 @@
 <?php require "pages/header.php";
 
+
+
 ?>
 
 
@@ -23,35 +25,26 @@
     </nav>
 
     <?php
-            
-    // Requête SQL pour sélectionner toutes les données de la table
-    $sql = "SELECT nom From entreprise";
-    $result = $conn->query($sql);
 
-    // Vérifier si des données ont été trouvées
-    if ($result->num_rows > 0) {
+// Connexion à la base de données
+$pdo = new PDO('mysql:host=localhost;dbname=bdd-diagnostic', 'root', '');
 
-        // Afficher les données dans un tableau HTML
-        echo "<table>";
-        ?>
-        <tr><td>Entrepries</td><td>Lien</td></tr>
-        <?php
+// Récupération des entreprises depuis la base de données
+$stmt = $pdo->query('SELECT id, nom FROM entreprise');
+$entreprises = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Boucle pour afficher chaque ligne de données
-        while($row = $result->fetch_assoc()) {
-            echo "<tr><td>".$row["nom"]."</td><td>liens</td></tr>";
-        }
-
-        echo "</table>";
-
-    } else {
-        echo "0 résultats";
-    }
-
-    // Fermer la connexion à la base de données
-    $conn->close();
-
-
+// Affichage du tableau HTML
+echo '<table>';
+echo '<thead><tr><th>Nom de l\'entreprise</th><th>Détails</th></tr></thead>';
+echo '<tbody>';
+foreach ($entreprises as $entreprise) {
+    echo '<tr>';
+    echo '<td>' . htmlspecialchars($entreprise['nom']) . '</td>';
+    echo '<td><a href="/pages/home.php?id=' . htmlspecialchars($entreprise['id']) . '">Voir les détails</a></td>';
+    echo '</tr>';
+}
+echo '</tbody>';
+echo '</table>';
     ?>
 
   </body>
