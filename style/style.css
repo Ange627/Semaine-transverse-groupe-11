@@ -48,3 +48,18 @@ h1 {
     margin: 0;
     padding: 0;
   }
+
+  /* Styles de base pour les liens de navigation */
+nav a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Styles pour les liens survolés */
+nav a:hover {
+  background-color: #333;
+  color: #fff;
+}

@@ -6,11 +6,13 @@
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
-    <a href="home.php">Home</a>
-    <a href="numérique.php">numérique</a>
-    <a href="réactivité.php">réactivité</a>
+    <nav>
+      <a href="home.php">Home</a>
+      <a href="numérique.php">numérique</a>
+      <a href="réactivité.php">réactivité</a>
+    </nav>
     <br>
-    <h1>Axe réactivité</h1>
+    <h1>Axe compétence</h1>
   </body>
 </html>
 

@@ -7,11 +7,13 @@
     <link href="../style/style.css" rel="stylesheet">
   </head>
   <body>
+  <nav>
     <a href="home.php">Home</a>
     <a href="competence.php">competence</a>
     <a href="réactivité.php">réactivité</a>
+  </nav>
     <br>
-    <h1>Axe réactivité</h1>
+    <h1>Axe numérique</h1>
   </body>
 </html>
 

@@ -17,11 +17,9 @@
 
     <h2>Selectionner une entreprise</h2>
     <nav>
-      <ul>
-        <li><a href="pages/competence.php">Compétence</a></li>
-        <li><a href="pages/numérique.php">Numérique</a></li>
-        <li><a href="pages/réactivité.php">Réactivité</a></li>
-      </ul>
+        <a href="pages/competence.php">Compétence</a>
+        <a href="pages/numérique.php">Numérique</a>
+        <a href="pages/réactivité.php">Réactivité</a>
     </nav>
 
     <?php
