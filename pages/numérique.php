@@ -1,4 +1,8 @@
+<?php require "header.php";
 
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,11 +12,14 @@
   </head>
   <body>
   <nav>
-    <a href="home.php">Home</a>
-    <a href="competence.php">competence</a>
-    <a href="réactivité.php">réactivité</a>
+    <?php 
+      echo '<td><a href="/Semaine-transverse-groupe-11/pages/home.php?id=' . $id . '">home</a></td>';
+      echo '<td><a href="/Semaine-transverse-groupe-11/pages/competence.php?id=' . $id . '">competence</a></td>';
+      echo '<td><a href="/Semaine-transverse-groupe-11/pages/réactivité.php?id=' . $id . '">réactivité</a></td>';
+    ?>
   </nav>
     <br>
+
     <h1>Axe numérique</h1>
   </body>
 </html>
@@ -23,7 +30,9 @@
 // Requête SQL pour sélectionner toutes les données de la table
 $sql = "SELECT score,libelle,question FROM numerique 
 inner join numerique_item on numerique.iditem = numerique_item.id
-INNER JOIN questionnement_numerique on numerique.id = questionnement_numerique.id;";
+INNER JOIN questionnement_numerique on numerique.id = questionnement_numerique.id
+INNER JOIN entreprise on numerique.identreprise = entreprise.id
+WHERE entreprise.id = $id";
 $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées

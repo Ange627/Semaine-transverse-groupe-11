@@ -1,5 +1,7 @@
 <?php require "header.php";
 
+$id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -13,10 +15,14 @@
     <h1>Diagnostic entreprise hypromat</h1>
     <p>Liens vers les différents axes d'amélioration</p>
      <nav>
-        <a href="../index.php">accueil</a>
-        <a href="competence.php">Compétence</a>
-        <a href="numérique.php">Numérique</a>
-        <a href="réactivité.php">Réactivité</a>
+    <?php
+        echo '<td><a href="/Semaine-transverse-groupe-11/pages/competence.php?id=' . $id . '">compétence</a></td>';
+        echo '<td><a href="/Semaine-transverse-groupe-11/pages/numérique.php?id=' . $id . '">numérique</a></td>';
+        echo '<td><a href="/Semaine-transverse-groupe-11/pages/réactivité.php?id=' . $id . '">réactivité</a></td>';
+
+
+    ?>
+
     </nav>
 
 

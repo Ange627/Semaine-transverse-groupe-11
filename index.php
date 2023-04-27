@@ -38,7 +38,7 @@ echo '<tbody>';
 foreach ($entreprises as $entreprise) {
     echo '<tr>';
     echo '<td>' . htmlspecialchars($entreprise['nom']) . '</td>';
-    echo '<td><a href="/pages/home.php?id=' . htmlspecialchars($entreprise['id']) . '">Voir les détails</a></td>';
+    echo '<td><a href="/Semaine-transverse-groupe-11/pages/home.php?id=' . htmlspecialchars($entreprise['id']) . '">Voir les détails</a></td>';
     echo '</tr>';
 }
 echo '</tbody>';
