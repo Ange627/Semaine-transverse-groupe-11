@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 27 avr. 2023 à 16:32
+-- Généré le : jeu. 27 avr. 2023 à 16:38
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -100,7 +100,7 @@ INSERT INTO `entreprise` (`id`, `nom`) VALUES
 --
 
 CREATE TABLE `numerique` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `identreprise` int(11) DEFAULT NULL,
   `idquestionnement` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
@@ -112,26 +112,26 @@ CREATE TABLE `numerique` (
 --
 
 INSERT INTO `numerique` (`id`, `identreprise`, `idquestionnement`, `score`, `iditem`) VALUES
-(NULL, 1, 1, 1, 1),
-(NULL, 1, 2, 1, 1),
-(NULL, 1, 3, 1, 1),
-(NULL, 1, 4, 1, 1),
-(NULL, 1, 5, 1, 1),
-(NULL, 1, 6, 1, 1),
-(NULL, 1, 7, 1, 1),
-(NULL, 1, 1, 1, 2),
-(NULL, 1, 2, 1, 2),
-(NULL, 1, 3, 2, 2),
-(NULL, 1, 4, 2, 2),
-(NULL, 1, 5, 0, 2),
-(NULL, 1, 6, 0, 2),
-(NULL, 1, 1, 0, 3),
-(NULL, 1, 2, 2, 3),
-(NULL, 1, 3, 0, 3),
-(NULL, 1, 4, 2, 3),
-(NULL, 1, 5, 1, 3),
-(NULL, 1, 6, 1, 3),
-(NULL, 1, 7, 2, 3);
+(1, 1, 1, 1, 1),
+(2, 1, 2, 1, 1),
+(3, 1, 3, 1, 1),
+(4, 1, 4, 1, 1),
+(5, 1, 5, 1, 1),
+(6, 1, 6, 1, 1),
+(7, 1, 7, 1, 1),
+(8, 1, 1, 1, 2),
+(9, 1, 2, 1, 2),
+(10, 1, 3, 2, 2),
+(11, 1, 4, 2, 2),
+(12, 1, 5, 0, 2),
+(13, 1, 6, 0, 2),
+(14, 1, 1, 0, 3),
+(15, 1, 2, 2, 3),
+(16, 1, 3, 0, 3),
+(17, 1, 4, 2, 3),
+(18, 1, 5, 1, 3),
+(19, 1, 6, 1, 3),
+(20, 1, 7, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -255,7 +255,7 @@ INSERT INTO `questionnement_reactivite` (`id`, `id_item`, `question`) VALUES
 --
 
 CREATE TABLE `reactivite` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL,
   `identreprise` int(11) DEFAULT NULL,
   `idquestionnement` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
@@ -267,17 +267,17 @@ CREATE TABLE `reactivite` (
 --
 
 INSERT INTO `reactivite` (`id`, `identreprise`, `idquestionnement`, `score`, `iditem`) VALUES
-(NULL, 1, 1, 2, 1),
-(NULL, 1, 2, 0, 1),
-(NULL, 1, 3, 0, 1),
-(NULL, 1, 1, 2, 2),
-(NULL, 1, 2, 1, 2),
-(NULL, 1, 3, 0, 2),
-(NULL, 1, 4, 1, 2),
-(NULL, 1, 1, 0, 3),
-(NULL, 1, 2, 1, 3),
-(NULL, 1, 3, 1, 3),
-(NULL, 1, 1, 0, 4);
+(1, 1, 1, 2, 1),
+(2, 1, 2, 0, 1),
+(3, 1, 3, 0, 1),
+(4, 1, 1, 2, 2),
+(5, 1, 2, 1, 2),
+(6, 1, 3, 0, 2),
+(7, 1, 4, 1, 2),
+(8, 1, 1, 0, 3),
+(9, 1, 2, 1, 3),
+(10, 1, 3, 1, 3),
+(11, 1, 1, 0, 4);
 
 -- --------------------------------------------------------
 
@@ -324,6 +324,12 @@ ALTER TABLE `entreprise`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `numerique`
+--
+ALTER TABLE `numerique`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `numerique_item`
 --
 ALTER TABLE `numerique_item`
@@ -345,6 +351,12 @@ ALTER TABLE `questionnement_numerique`
 -- Index pour la table `questionnement_reactivite`
 --
 ALTER TABLE `questionnement_reactivite`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `reactivite`
+--
+ALTER TABLE `reactivite`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -376,6 +388,12 @@ ALTER TABLE `entreprise`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT pour la table `numerique`
+--
+ALTER TABLE `numerique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT pour la table `numerique_item`
 --
 ALTER TABLE `numerique_item`
@@ -398,6 +416,12 @@ ALTER TABLE `questionnement_numerique`
 --
 ALTER TABLE `questionnement_reactivite`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT pour la table `reactivite`
+--
+ALTER TABLE `reactivite`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `reactivite_item`
