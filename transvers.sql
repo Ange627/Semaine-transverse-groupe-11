@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 26 avr. 2023 à 10:49
+-- Généré le : jeu. 27 avr. 2023 à 16:32
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `bdd-diagnostic`
+-- Base de données : `transvers`
 --
 
 -- --------------------------------------------------------

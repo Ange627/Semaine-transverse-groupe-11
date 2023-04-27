@@ -5,14 +5,14 @@
     $host = 'localhost';
     $username = 'root';
     $password = '';
-    $dbname = 'bdd-diagnostic';
+    $dbname = 'transvers';
 
     $conn = new mysqli($host, $username, $password, $dbname);
 
     // Vérifier la connexion
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-        echo "0azdaz résultats";
+        echo "0 résultat";
     }
 
 ?>
