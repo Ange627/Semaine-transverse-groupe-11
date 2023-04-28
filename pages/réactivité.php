@@ -29,12 +29,13 @@
 
 <?php require "header.php";
 
-// Requête SQL pour sélectionner toutes les données de la table
-$sql = "SELECT score,libelle,question FROM reactivite 
-inner join reactivite_item on reactivite.iditem = reactivite_item.id
-INNER JOIN questionnement_reactivite on reactivite.id = questionnement_reactivite.id
-INNER JOIN entreprise on reactivite.identreprise = entreprise.id
-    WHERE entreprise.id = $id";
+
+  $sql = "SELECT identreprise,score, question , libelle from reactivite 
+  INNER JOIN questionnement_reactivite  on reactivite.idquestionnement = questionnement_reactivite.id
+  INNER JOIN reactivite_item on reactivite.iditem = reactivite_item.id
+  WHERE identreprise = $id";
+
+
 $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées

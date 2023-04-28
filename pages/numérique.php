@@ -28,12 +28,11 @@ $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 <?php require "header.php";
 
 // Requête SQL pour sélectionner toutes les données de la table
-$sql = "SELECT score,libelle,question FROM numerique 
-inner join numerique_item on numerique.iditem = numerique_item.id
-INNER JOIN questionnement_numerique on numerique.id = questionnement_numerique.id
-INNER JOIN entreprise on numerique.identreprise = entreprise.id
-WHERE entreprise.id = $id";
-$result = $conn->query($sql);
+  $sql = "SELECT identreprise,score, question , libelle from numerique 
+  INNER JOIN questionnement_numerique  on numerique.idquestionnement = questionnement_numerique.id
+  INNER JOIN numerique_item on numerique.iditem = numerique_item.id
+  WHERE identreprise = $id";
+  $result = $conn->query($sql);
 
 // Vérifier si des données ont été trouvées
 if ($result->num_rows > 0) {

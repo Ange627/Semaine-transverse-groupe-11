@@ -31,11 +31,10 @@
 <?php
 
     // Requête SQL pour sélectionner toutes les données de la table
-    $sql = "SELECT score,libelle,question FROM competence 
-    inner join competence_item on competence.iditem = competence_item.id
-    INNER JOIN questionnement_competence on competence.id = questionnement_competence.id
-    INNER JOIN entreprise on competence.identreprise = entreprise.id
-    WHERE entreprise.id = $id";
+    $sql = "SELECT identreprise,score, question , libelle from competence 
+    INNER JOIN questionnement_competence on competence.idquestionnement = questionnement_competence.id
+    INNER JOIN competence_item on competence.iditem = competence_item.id
+    WHERE identreprise = $id";
     $result = $conn->query($sql);
 
     // Vérifier si des données ont été trouvées
