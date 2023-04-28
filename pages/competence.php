@@ -44,7 +44,7 @@
         // Afficher les données dans un tableau HTML
         echo "<table>";
         ?>
-        <tr><td>Libelle</td><td>Question</td><td>score</td></tr>
+        <thead><tr><th>Libelle</th><th>Question</th><th>score</th></tr></thead>
         <?php
 
         // Boucle pour afficher chaque ligne de données

@@ -1,4 +1,39 @@
 <?php require "header.php";
+    if(isset($_POST['submit'])) {
+        // Récupération des données du formulaire
+        $nom_entreprise = mysqli_real_escape_string($conn, $_POST['nom_entreprise']);
+
+        // Insertion des données dans la table entreprise
+        $requete = "INSERT INTO entreprise (nom) VALUES ('$nom_entreprise')";
+        $resultat = $conn->query($requete);
+
+        // Récupération de l'ID de l'entreprise insérée
+        $id_entreprise = mysqli_insert_id($conn);
+
+        // Insertion des scores de compétence dans la table competence
+        for($i = 1; $i <= 9; $i++) {
+            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
+            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
+            $requete = "INSERT INTO competence (identreprise, idquestionnement , score) VALUES ('$id_entreprise', '$id_question', '$score')";
+            $resultat = $conn->query($requete);
+        }
+
+        // Insertion des scores numériques dans la table numerique
+        for($i = 1; $i <= 20; $i++) {
+            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
+            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
+            $requete = "INSERT INTO numerique (identreprise, idquestionnement, score) VALUES ('$id_entreprise', '$id_question', '$score')";
+            $resultat = $conn->query($requete);
+        }
+
+        // Insertion des scores de réactivité dans la table reactivite
+        for($i = 1; $i <= 11; $i++) {
+            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
+            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
+            $requete = "INSERT INTO reactivite (identreprise, idquestionnement, score) VALUES ('$id_entreprise', '$id_question', '$score')";
+            $resultat = $conn->query($requete);
+        }
+    }
 
 ?>
   
@@ -71,43 +106,3 @@
 
 
 </html>
-
-
-<?php 
-    
-    if(isset($_POST['submit'])) {
-        // Récupération des données du formulaire
-        $nom_entreprise = mysqli_real_escape_string($conn, $_POST['nom_entreprise']);
-
-        // Insertion des données dans la table entreprise
-        $requete = "INSERT INTO entreprise (nom) VALUES ('$nom_entreprise')";
-        $resultat = $conn->query($requete);
-
-        // Récupération de l'ID de l'entreprise insérée
-        $id_entreprise = mysqli_insert_id($conn);
-
-        // Insertion des scores de compétence dans la table competence
-        for($i = 1; $i <= 9; $i++) {
-            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
-            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
-            $requete = "INSERT INTO competence (identreprise, idquestionnement , score) VALUES ('$id_entreprise', '$id_question', '$score')";
-            $resultat = $conn->query($requete);
-        }
-
-        // Insertion des scores numériques dans la table numerique
-        for($i = 1; $i <= 20; $i++) {
-            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
-            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
-            $requete = "INSERT INTO numerique (identreprise, idquestionnement, score) VALUES ('$id_entreprise', '$id_question', '$score')";
-            $resultat = $conn->query($requete);
-        }
-
-        // Insertion des scores de réactivité dans la table reactivite
-        for($i = 1; $i <= 11; $i++) {
-            $id_question = mysqli_real_escape_string($conn, $_POST['id_question_'.$i]);
-            $score = mysqli_real_escape_string($conn, $_POST['score_question_'.$i]);
-            $requete = "INSERT INTO reactivite (identreprise, idquestionnement, score) VALUES ('$id_entreprise', '$id_question', '$score')";
-            $resultat = $conn->query($requete);
-        }
-    }
-?>

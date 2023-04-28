@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
     echo "<table>";
 
     ?>
-    <tr><td>Libelle</td><td>Question</td><td>score</td></tr>
+    <thead><tr><th>Libelle</th><th>Question</th><th>score</th></tr></thead>
     <?php
     // Boucle pour afficher chaque ligne de données
     while($row = $result->fetch_assoc()) {
