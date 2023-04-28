@@ -1,8 +1,7 @@
 <?php require "pages/header.php";
 
-  
-
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,11 +20,17 @@
     <?php
 
         // Connexion à la base de données
-        $pdo = new PDO('mysql:host=localhost;dbname=bdd-diagnostic', 'root', '');
+        $mysqli = new mysqli('localhost', 'root', '', 'transvers');
+
+        // Vérification de la connexion
+        if ($mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+            exit();
+        }
 
         // Récupération des entreprises depuis la base de données
-        $stmt = $pdo->query('SELECT id, nom FROM entreprise');
-        $entreprises = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $mysqli->query('SELECT id, nom FROM entreprise');
+        $entreprises = $result->fetch_all(MYSQLI_ASSOC);
 
         // Affichage du tableau HTML
         echo '<table>';
@@ -39,6 +44,9 @@
         }
         echo '</tbody>';
         echo '</table>';
+
+        // Fermeture de la connexion
+        $mysqli->close();
     ?>
 
   </body>
