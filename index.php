@@ -1,5 +1,4 @@
 <?php require "pages/header.php";
-
 ?>
 
 <!DOCTYPE html>
